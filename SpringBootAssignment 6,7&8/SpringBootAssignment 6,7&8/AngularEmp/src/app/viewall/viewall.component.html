@@ -1,0 +1,23 @@
+<div class="col-md-3 alert alert-danger mx-auto m-1" *ngIf="msg!=undefined">{{msg}}</div>
+
+<table class="col-md-8 table table-light table-striped table-hover mx-auto mt-3">
+<tr>
+<td>Employee ID</td>
+<td>Employee Name</td>
+<td>Salary</td>
+<td>Department</td>
+<td>DOJ</td>
+<td>Delete</td>
+<td>Edit</td>
+</tr>
+<tr *ngFor="let emp of employees">
+<td>{{emp.empId}}</td>
+  <td>{{emp.empName | titlecase}}</td>
+  <td>{{emp.empSal | currency:'INR'}}</td>
+  <td>{{emp.dept.deptName | titlecase}}</td>
+  <td>{{emp.strDoj}}</td>
+  <td><a class="btn btn-danger text-white" (click)="deleteById(emp.empId)" >Delete</a></td>
+  <td><a class="btn btn-warning text-white" routerLink="/editemployee/{{emp.empId}}" >Edit</a></td>
+
+</tr>
+</table>

@@ -1,0 +1,31 @@
+<section class="col-md-4 p-2 m-2 mx-auto" >
+  Employee ID <input type="text" [(ngModel)]="eid" />
+ <input type="button" (click)="searchById()" value="search" />
+</section>
+
+<section class="alert alert-danger col-md-3 mx-auto m-1" *ngIf="msg!=undefined">
+{{msg}}
+</section>
+
+<section class=" col-md-6 mx-auto" *ngIf="emp!=null">
+<div class="m-1 row">
+<div class="col-md-3 bg-primary p-1">Employee ID</div>
+<div class="col-md-3 bg-secondary p-1">{{emp.empId}}</div>
+</div>
+<div class="m-1 row">
+  <div class="col-md-3 bg-primary p-1">Employee Name</div>
+  <div class="col-md-3 bg-secondary p-1">{{emp.empName}}</div>
+  </div>
+  <div class="m-1 row">
+    <div class="col-md-3 bg-primary p-1">Employee Salary</div>
+    <div class="col-md-3 bg-secondary p-1">{{emp.empSal}}</div>
+    </div>
+    <div class="m-1 row">
+      <div class="col-md-3 bg-primary p-1">Department</div>
+      <div class="col-md-3 bg-secondary p-1">{{emp.dept.deptName}}</div>
+      </div>
+      <div class="m-1 row">
+        <div class="col-md-3 bg-primary p-1">DOJ</div>
+        <div class="col-md-3 bg-secondary p-1">{{emp.strDoj}}</div>
+        </div>
+</section>
